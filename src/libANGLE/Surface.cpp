@@ -42,7 +42,7 @@ SurfaceState::SurfaceState(SurfaceID idIn,
       swapInterval(0)
 {
     directComposition = attributes.get(EGL_DIRECT_COMPOSITION_ANGLE, EGL_FALSE) == EGL_TRUE;
-    swapInterval      = attributes.getAsInt(EGL_SWAP_INTERVAL_ANGLE, 1);
+    swapInterval      = attributes.getAsInt(EGL_SWAP_INTERVAL_ANGLE, 0);
 }
 
 SurfaceState::~SurfaceState()

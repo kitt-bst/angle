@@ -243,7 +243,8 @@ ANGLE_INLINE std::vector<bool> GetRequiredGLES32ExtensionList(
     // Therefore, it is not included here.
     return {
         // From ANDROID_extension_pack_es31a
-        nativeExtensions.textureCompressionAstcLdrKHR,
+        // ASTC texture will be decompressed by CPU
+        // nativeExtensions.textureCompressionAstcLdrKHR,
         nativeExtensions.blendEquationAdvancedKHR,
         nativeExtensions.sampleShadingOES,
         nativeExtensions.sampleVariablesOES,

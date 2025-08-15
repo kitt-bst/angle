@@ -2361,7 +2361,7 @@ void Display::initVendorString()
     std::string vendorStringImpl = mImplementation->getVendorString();
     if (!vendorStringImpl.empty())
     {
-        mVendorString += " (" + vendorStringImpl + ")";
+        mVendorString = vendorStringImpl;
     }
 }
 

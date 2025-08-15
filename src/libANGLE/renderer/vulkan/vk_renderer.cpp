@@ -4522,15 +4522,6 @@ std::string Renderer::getRendererDescription() const
 {
     std::stringstream strstr;
 
-    uint32_t apiVersion = mPhysicalDeviceProperties.apiVersion;
-
-    strstr << "Vulkan ";
-    strstr << VK_API_VERSION_MAJOR(apiVersion) << ".";
-    strstr << VK_API_VERSION_MINOR(apiVersion) << ".";
-    strstr << VK_API_VERSION_PATCH(apiVersion);
-
-    strstr << " (";
-
     // In the case of NVIDIA, deviceName does not necessarily contain "NVIDIA". Add "NVIDIA" so that
     // Vulkan end2end tests can be selectively disabled on NVIDIA. TODO(jmadill): should not be
     // needed after http://anglebug.com/40096421 is fixed and end2end_tests use more sophisticated
@@ -4542,8 +4533,6 @@ std::string Renderer::getRendererDescription() const
 
     strstr << mPhysicalDeviceProperties.deviceName;
     strstr << " (" << gl::FmtHex(mPhysicalDeviceProperties.deviceID) << ")";
-
-    strstr << ")";
 
     return strstr.str();
 }

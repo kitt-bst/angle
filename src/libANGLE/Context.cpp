@@ -3507,24 +3507,12 @@ void Context::initRendererString()
     }
     else
     {
-        std::string vendorString(mDisplay->getBackendVendorString());
         std::string rendererString(mDisplay->getBackendRendererDescription());
-        std::string versionString(mDisplay->getBackendVersionString(!isWebGL()));
         // Commas are used as a separator in ANGLE's renderer string, so remove commas from each
         // element.
-        vendorString.erase(std::remove(vendorString.begin(), vendorString.end(), ','),
-                           vendorString.end());
         rendererString.erase(std::remove(rendererString.begin(), rendererString.end(), ','),
                              rendererString.end());
-        versionString.erase(std::remove(versionString.begin(), versionString.end(), ','),
-                            versionString.end());
-        frontendRendererString << "ANGLE (";
-        frontendRendererString << vendorString;
-        frontendRendererString << ", ";
         frontendRendererString << rendererString;
-        frontendRendererString << ", ";
-        frontendRendererString << versionString;
-        frontendRendererString << ")";
     }
 
     mRendererString = MakeStaticString(frontendRendererString.str());
@@ -3570,9 +3558,7 @@ void Context::initVersionStrings()
     }
     else
     {
-        versionString << "OpenGL ES ";
-        versionString << clientVersion.getMajor() << "." << clientVersion.getMinor() << ".0 (ANGLE "
-                      << angle::GetANGLEVersionString() << ")";
+        versionString << mDisplay->getVersionString();
     }
 
     mVersionString = MakeStaticString(versionString.str());

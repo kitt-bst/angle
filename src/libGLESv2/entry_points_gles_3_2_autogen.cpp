@@ -77,7 +77,7 @@ void GL_APIENTRY GL_BlendEquationSeparatei(GLuint buf, GLenum modeRGB, GLenum mo
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -121,7 +121,7 @@ void GL_APIENTRY GL_BlendEquationi(GLuint buf, GLenum mode)
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -169,7 +169,7 @@ GL_BlendFuncSeparatei(GLuint buf, GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -216,7 +216,7 @@ void GL_APIENTRY GL_BlendFunci(GLuint buf, GLenum src, GLenum dst)
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -260,7 +260,7 @@ void GL_APIENTRY GL_ColorMaski(GLuint index, GLboolean r, GLboolean g, GLboolean
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -324,7 +324,7 @@ void GL_APIENTRY GL_CopyImageSubData(GLuint srcName,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().copyImageEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -521,7 +521,7 @@ void GL_APIENTRY GL_Disablei(GLenum target, GLuint index)
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -574,7 +574,7 @@ void GL_APIENTRY GL_DrawElementsBaseVertex(GLenum mode,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawElementsBaseVertexEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -629,7 +629,7 @@ void GL_APIENTRY GL_DrawElementsInstancedBaseVertex(GLenum mode,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawElementsBaseVertexEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -687,7 +687,7 @@ void GL_APIENTRY GL_DrawRangeElementsBaseVertex(GLenum mode,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawElementsBaseVertexEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -732,7 +732,7 @@ void GL_APIENTRY GL_Enablei(GLenum target, GLuint index)
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -786,7 +786,7 @@ void GL_APIENTRY GL_FramebufferTexture(GLenum target,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().geometryShaderEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -893,7 +893,7 @@ GLenum GL_APIENTRY GL_GetGraphicsResetStatus()
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().robustnessEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -946,7 +946,7 @@ GL_GetObjectLabel(GLenum identifier, GLuint name, GLsizei bufSize, GLsizei *leng
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().debugLabelEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1081,7 +1081,7 @@ void GL_APIENTRY GL_GetSamplerParameterIiv(GLuint sampler, GLenum pname, GLint *
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1127,7 +1127,7 @@ void GL_APIENTRY GL_GetSamplerParameterIuiv(GLuint sampler, GLenum pname, GLuint
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1175,7 +1175,7 @@ void GL_APIENTRY GL_GetTexParameterIiv(GLenum target, GLenum pname, GLint *param
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1220,7 +1220,7 @@ void GL_APIENTRY GL_GetTexParameterIuiv(GLenum target, GLenum pname, GLuint *par
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1265,7 +1265,7 @@ void GL_APIENTRY GL_GetnUniformfv(GLuint program, GLint location, GLsizei bufSiz
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().robustnessEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1311,7 +1311,7 @@ void GL_APIENTRY GL_GetnUniformiv(GLuint program, GLint location, GLsizei bufSiz
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().robustnessEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1357,7 +1357,7 @@ void GL_APIENTRY GL_GetnUniformuiv(GLuint program, GLint location, GLsizei bufSi
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().robustnessEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1401,7 +1401,7 @@ GLboolean GL_APIENTRY GL_IsEnabledi(GLenum target, GLuint index)
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().drawBuffersIndexedEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1496,7 +1496,7 @@ void GL_APIENTRY GL_ObjectLabel(GLenum identifier, GLuint name, GLsizei length, 
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().debugLabelEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1580,7 +1580,7 @@ void GL_APIENTRY GL_PatchParameteri(GLenum pname, GLint value)
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().tessellationShaderEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1672,7 +1672,7 @@ void GL_APIENTRY GL_PrimitiveBoundingBox(GLfloat minX,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().primitiveBoundingBoxEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1773,7 +1773,7 @@ void GL_APIENTRY GL_ReadnPixels(GLint x,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().robustnessEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1818,7 +1818,7 @@ void GL_APIENTRY GL_SamplerParameterIiv(GLuint sampler, GLenum pname, const GLin
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1862,7 +1862,7 @@ void GL_APIENTRY GL_SamplerParameterIuiv(GLuint sampler, GLenum pname, const GLu
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1908,7 +1908,7 @@ void GL_APIENTRY GL_TexBuffer(GLenum target, GLenum internalformat, GLuint buffe
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBufferEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -1960,7 +1960,7 @@ void GL_APIENTRY GL_TexBufferRange(GLenum target,
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBufferEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -2007,7 +2007,7 @@ void GL_APIENTRY GL_TexParameterIiv(GLenum target, GLenum pname, const GLint *pa
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
@@ -2052,7 +2052,7 @@ void GL_APIENTRY GL_TexParameterIuiv(GLenum target, GLenum pname, const GLuint *
         bool isCallValid = context->skipValidation();
         if (!isCallValid)
         {
-            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2))
+            if (ANGLE_LIKELY(context->getClientVersion() >= ES_3_2 || context->getExtensions().textureBorderClampEXT))
             {
 #if defined(ANGLE_ENABLE_ASSERTS)
                 const uint32_t errorCount = context->getPushedErrorCount();
